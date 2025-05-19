@@ -1,7 +1,7 @@
 .calc-btn {
     cursor: pointer;
     border: 0;
-    border-radius: 10px;
+    border-radius: 1rem;
     padding: 20px;
 }
   
@@ -22,7 +22,12 @@
 .calc-btn.wide {
     grid-column: span 2;
     width: 100%;
-  }
+}
+
+.calc-btn:active {
+    background-color: #dee2e6;
+    transform: translateY(2px);
+}
 
 
   

@@ -1,4 +1,3 @@
-import './styles/display.css';
 import './styles/calculator.css';
 
 export default function Display ({value})  {
@@ -8,4 +7,3 @@ export default function Display ({value})  {
     </div>
   )
 }
-
