@@ -1,4 +1,4 @@
-import { Button } from '../components/Button';
+import { Button } from '../components/Button'
 
 export default {
   title: 'Calculator/Button',
@@ -16,7 +16,7 @@ export default {
     },
     onClick: { action: 'clicked' },
   },
-};
+}
 
 export const Number = {
   args: {
@@ -24,7 +24,7 @@ export const Number = {
     clase: 'number',
     isWide: false,
   },
-};
+}
 
 export const Operator = {
   args: {
@@ -32,7 +32,7 @@ export const Operator = {
     clase: 'operator',
     isWide: false,
   },
-};
+}
 
 export const isWide = {
   args: {
@@ -40,7 +40,7 @@ export const isWide = {
     clase: 'number',
     isWide: true,
   },
-};
+}
 
 export const Special = {
   args: {
@@ -48,4 +48,4 @@ export const Special = {
     clase: 'special',
     isWide: false,
   },
-};
+}

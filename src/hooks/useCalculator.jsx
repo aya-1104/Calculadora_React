@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState } from "react"
 
 /**
  * Custom hook que maneja la lógica principal de una calculadora simple.
@@ -37,28 +37,28 @@ export function useCalculator() {
 
     //Procesa una operación nueva. Si ya hay una pendiente, calcula el resultado antes.
     const doOperation = (nextOperation) => {
-        const inputValue = parseFloat(display);
+        const inputValue = parseFloat(display)
         
         if (storedValue === null) {
-          setStoredValue(inputValue);
+          setStoredValue(inputValue)
         } else if (operation) {
-          const result = calculate(storedValue, inputValue, operation);
-          let displayResult;
+          const result = calculate(storedValue, inputValue, operation)
+          let displayResult
           
           // Manejo especial para divisiones
           if (operation === '/' && Number.isInteger(result) === false) {
-            displayResult = formatDecimalResult(result);
+            displayResult = formatDecimalResult(result)
           } else {
-            displayResult = formatIntegerResult(result);
+            displayResult = formatIntegerResult(result)
           }
           
-          setDisplay(displayResult);
-          setStoredValue(result);
+          setDisplay(displayResult)
+          setStoredValue(result)
         }
         
-        setWaitOperand(true);
-        setOperation(nextOperation);
-    };
+        setWaitOperand(true)
+        setOperation(nextOperation)
+    }
 
     // Limpia todo el estado de la calculadora.
     const clearDisplay = () => {
@@ -71,40 +71,40 @@ export function useCalculator() {
     //Formatea resultados enteros, validando límites.
     const formatIntegerResult = (result) => {
         if (result > 999999999 || result.toString().length > 9) {
-          return 'ERROR';
+          return 'ERROR'
         }
         if (result < 0) {
-          return 'ERROR';
+          return 'ERROR'
         }
-        return String(result);
-    };
+        return String(result)
+    }
 
     //Formatea resultados decimales, validando límites.
     const formatDecimalResult = (result) => {
         if (result < 0 || result > 999999999) {
-          return 'ERROR';
+          return 'ERROR'
         }
 
-        let resultStr = result.toString();
+        let resultStr = result.toString()
 
         // Limitar a 9 caracteres (incluyendo el punto)
         if (resultStr.length > 9) {
           // Contar los dígitos antes del punto
-          const integerPart = resultStr.split('.')[0];
+          const integerPart = resultStr.split('.')[0]
           
           // Si la parte entera ya tiene 9 dígitos -> ERROR
           if (integerPart.length >= 9) {
-            return 'ERROR';
+            return 'ERROR'
           }
           
           // Calcular cuántos decimales se pueden mostrar
-          const availableDecimals = 8 - integerPart.length;
-          resultStr = result.toFixed(availableDecimals).replace(/\.?0+$/, '');
+          const availableDecimals = 8 - integerPart.length
+          resultStr = result.toFixed(availableDecimals).replace(/\.?0+$/, '')
           
         }
       
-        return resultStr;
-    };
+        return resultStr
+    }
     
     //Cambia el signo del número actual.
     const toggleSign = () => {

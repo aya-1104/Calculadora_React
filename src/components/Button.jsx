@@ -1,4 +1,4 @@
-import './styles/button.css';
+import './styles/button.css'
 
 export const Button = ({ value, clase, isWide = false, ...props }) => {
   
@@ -6,5 +6,5 @@ export const Button = ({ value, clase, isWide = false, ...props }) => {
     <button className={`calc-btn ${clase} ${isWide ? 'wide' : ''}`} {...props}>
       {value}
     </button>
-  );
-};
+  )
+}

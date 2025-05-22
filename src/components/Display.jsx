@@ -1,4 +1,4 @@
-import './styles/calculator.css';
+import './styles/calculator.css'
 
 export default function Display ({value})  {
   return (
