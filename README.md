@@ -1,12 +1,56 @@
-# React + Vite
+#Proyecto de Calculadora con Vite + React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Características
 
-Currently, two official plugins are available:
+- Operaciones básicas: suma, resta, multiplicación, división y modulo.
+- Soporte para punto decimal y cambio de signo.
+- Lógica encapsulada en un hook (`useCalculator`).
+- Pruebas unitarias con Vitest.
+- Storybook para vista previa de componentes y documentación visual.
+- Diseño responsive y accesible. 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Características Especiales
 
-## Expanding the ESLint configuration
+- Límite de 9 dígitos en pantalla
+- Manejo de errores (overflow, división por cero)
+- Botón de limpiar (C)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+# Componentes
+
+- Display: Muestra los números y resultados
+- Button: Botones interactivos reutilizables
+- Keypad: Distribución de teclas
+- useCalculator: Lógica principal, custom hook
+
+## Tecnologías Utilizadas
+
+- React
+- Vite
+- Storybook
+- Vitest
+- Testing Library
+
+## Cómo Ejecutar el Proyecto
+
+```bash
+git clone https://github.com/aya-1104/Calculadora_React.git
+cd Calculadora_React
+npm install
+```
+```bash
+npm run dev	
+```
+Inicia la app en desarrollo (http://localhost:5173)
+
+```bash
+npm run storybook
+```
+Abre Storybook (http://localhost:6006)
+
+```bash
+npm test	
+```
+Ejecuta tests
+
+
+
